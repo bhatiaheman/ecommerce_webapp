@@ -1,3 +1,4 @@
+import Auth from "@/components/auth";
 import { Button } from "@/components/ui/button";
 import { mockData } from "@/lib/utils";
 import Link from "next/link";
@@ -18,13 +19,7 @@ export default function Home() {
             </div>
 
             <div className="flex items-center space-x-2">
-              <Button>
-                Login
-              </Button>
-
-              <Button>
-                Signup
-              </Button>
+              <Auth /> 
             </div>
         </header>
 
