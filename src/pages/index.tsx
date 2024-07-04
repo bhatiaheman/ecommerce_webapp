@@ -2,11 +2,13 @@ import Auth from "@/components/auth";
 import { Button } from "@/components/ui/button";
 import { mockData } from "@/lib/utils";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 
 
 export default function Home() {
   
+  const router = useRouter();
 
   return (
     <>
@@ -27,7 +29,9 @@ export default function Home() {
 
           {
             mockData.map((product) => (
-              <div key={product.id} className="rounded-xl bg-white shadow-lg border 
+              <Link key={product.id}
+                href={`/${product.slug}`}
+               className="rounded-xl bg-white shadow-lg border 
                border-gray-500 max-w-96 p-4 flex flex-col items-start">
                   <div>
                     <img src={product.imageUrl} alt={product.name} className="overflow-hidden w-96 h-full"/>
@@ -44,7 +48,7 @@ export default function Home() {
                   <div>
                     Available Quantity: {product.quantityAvailable}
                   </div>
-              </div>
+              </Link>
             ))
           }
         </div>
