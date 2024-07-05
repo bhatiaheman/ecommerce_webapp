@@ -31,7 +31,7 @@ export default function Home() {
             mockData.map((product) => (
               <Link key={product.id}
                 href={`/${product.slug}`}
-               className="rounded-xl bg-white shadow-lg border 
+               className="rounded-xl hover:border-black bg-white shadow-lg border 
                border-gray-500 max-w-96 p-4 flex flex-col items-start">
                   <div>
                     <img src={product.imageUrl} alt={product.name} className="overflow-hidden w-96 h-full"/>
